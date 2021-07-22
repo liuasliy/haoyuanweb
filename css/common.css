@@ -1,0 +1,150 @@
+@charset "UTF-8";
+/*
+ * common中公共用样式
+ * 颜色、边框、字体等
+*/
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote,
+th,
+td,
+section,
+article,
+aside,
+header,
+footer,
+nav,
+dialog,
+figure,
+hgroup {
+  margin: 0;
+  padding: 0; }
+
+input,
+select,
+textarea {
+  font-size: 100%; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+fieldset,
+img {
+  border: 0; }
+
+caption,
+th {
+  text-align: left; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: 500; }
+
+ul,
+ol,
+li {
+  list-style: none; }
+
+em,
+i {
+  font-style: normal; }
+
+del {
+  text-decoration: line-through; }
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+  font-style: normal;
+  font-weight: 500; }
+
+img {
+  border: 0;
+  max-width: 100%; }
+
+input,
+img {
+  vertical-align: middle; }
+
+input:focus,
+a:focus {
+  outline: 0; }
+
+input:hover {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-modify: read-write-plaintext-only; }
+
+a {
+  color: #353d44;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent; }
+
+a:active {
+  opacity: 0.7; }
+
+* {
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box; }
+
+.hide {
+  display: none; }
+
+.clearfix {
+  overflow: hidden;
+  zoom: 1; }
+
+body {
+  margin: auto;
+  padding: 0;
+  background: #f5f5f5;
+  font-family: 'Microsoft YaHei', Arial, 'Helvetica Neue', Helvetica, 'STHeiTi', sans-serif;
+  -webkit-overflow-scrolling: touch; }
+
+.fl {
+  float: left; }
+
+.container-wrap {
+  width: 1200px;
+  margin: 0 auto; }
+
+.container-main {
+  zoom: 1;
+  z-index: 1; }
+  .container-main::before, .container-main::after {
+    content: '';
+    display: table; }
+  .container-main::after {
+    clear: both; }
