@@ -2098,3 +2098,111 @@ button,
       border: solid 1px #010f26;
       width: 80px;
       margin: 32px auto 0; }
+
+.qua-content {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+  border-top: solid 5px #f0f0f0;
+  border-right: solid 5px #f0f0f0; }
+
+.qua-item {
+  width: 20%;
+  height: 165px;
+  border-bottom: solid 5px #f0f0f0;
+  border-left: solid 5px #f0f0f0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer; }
+  .qua-item:hover {
+    background: #e9f7fd; }
+  .qua-item img {
+    height: 45px;
+    margin-bottom: 25px;
+    margin-top: 30px; }
+  .qua-item p {
+    text-align: center;
+    padding: 0 12px;
+    font-size: 1rem; }
+
+.qua-intro {
+  box-shadow: 0px 8px 8px 2px #ebeef5; }
+  .qua-intro .echange-i-l {
+    padding-top: 30px;
+    padding-left: 80px;
+    height: 350px;
+    background: #ebf0fd; }
+    .qua-intro .echange-i-l h3 {
+      font-size: 1.2rem;
+      font-weight: bold; }
+      .qua-intro .echange-i-l h3::before {
+        width: 28px;
+        height: 28px; }
+    .qua-intro .echange-i-l p {
+      line-height: 28px;
+      color: #666666;
+      font-size: .9rem; }
+  .qua-intro .echange-i-r img {
+    height: 350px; }
+
+.agent-intro .echange-i-l {
+  height: 320px;
+  width: 53%;
+  padding-left: 35px; }
+  .agent-intro .echange-i-l h2 {
+    font-weight: normal;
+    font-size: 1.3rem;
+    padding-top: 30px !important;
+    padding-bottom: 25px !important; }
+
+.agent-intro .echange-i-r {
+  width: 47%; }
+  .agent-intro .echange-i-r img {
+    height: 320px; }
+
+.agent-info {
+  display: flex;
+  align-items: center;
+  margin-top: 40px; }
+  .agent-info .a-l,
+  .agent-info .a-r {
+    width: 50%;
+    padding: 35px; }
+  .agent-info .a-l {
+    background: #f9f9f9; }
+  .agent-info .a-r {
+    background: #d6e6ff; }
+  .agent-info h3.icon5::before {
+    width: 30px;
+    height: 30px;
+    background: url("../images/icon-5.png") no-repeat;
+    background-size: 100% 100%; }
+  .agent-info h4 {
+    font-size: 1.5rem;
+    padding-left: 50px;
+    padding-top: 120px; }
+  .agent-info h5 {
+    font-size: 14px;
+    padding-left: 50px;
+    padding-top: 25px;
+    padding-bottom: 52px; }
+
+.company-staff {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.c-staff-item {
+  width: 30%; }
+  .c-staff-item p {
+    margin-top: 30px;
+    font-size: 14px;
+    line-height: 24px; }
+
+.c-staff-pic {
+  background: #1452b9;
+  overflow: hidden;
+  height: 300px; }
