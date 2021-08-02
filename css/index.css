@@ -721,6 +721,9 @@ button,
   justify-content: center;
   cursor: pointer;
   border-bottom: 2px solid #41b0e2; }
+  .list_li a:hover,
+  .list_li a.active {
+    color: #41b0e2; }
 
 .list_li:hover {
   color: #41b0e2; }
