@@ -139,6 +139,11 @@ body {
 .hy-content {
   width: 1200px;
   margin: 0 auto; }
+  .hy-content::before, .hy-content::after {
+    content: "";
+    display: table; }
+  .hy-content::after {
+    clear: both; }
 
 .container-main {
   zoom: 1;
