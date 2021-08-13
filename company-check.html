@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>企业核名</title>
+    
+    <link rel="stylesheet" href="./css/semantic.min.css">
     <link rel="stylesheet" href="./css/index.css">
 </head>
 
@@ -22,11 +24,11 @@
             <a href="" class="">知识产权</a>
             <a href="./news.html" class="">新闻百科</a>
             <a href="./about.html" class="">关于浩源</a>
-            <div class="h-search" ><i></i>搜索</div>
+            <!-- <div class="h-search" ><i></i>搜索</div>
             <div class="search-main" >
                 <input type="text" placeholder="输入关键字查询" name="" id="">
                 <span>搜索</span>
-            </div>
+            </div> -->
         </div>
     </div>
 </header>
@@ -36,7 +38,7 @@
                 <h2>企业拟名称校验，提高工商注册通过率 </h2>
                 <div class="check-select">
                     <div class="select-item">
-                        <div class="s-lable">大连</div>
+                        <div class="s-lable">大连市</div>
                     </div>
                     <div class="select-item">
                         <div class="s-lable" style="width: 120px;"><span>区</span><i></i></div>
@@ -110,7 +112,7 @@
                     <div class="select-submit">提交审核</div>
                 </div>
                 <p>无地址 | 行业类型不确定 | 企业类型不确定 | 其他问题请 </p>
-                <div class="b-button">联系客服</div>
+                <div class="b-button" ><a href="#messageForm" style="color: #fff;">联系客服</a></div>
             </div>
         </section>
         <div role="dialog" class="modal is-active" style="display: none;">
@@ -119,7 +121,7 @@
                 <form action="">
                     <div class="modal-card" style="width: auto;">
                         <section class="modal-card-body">
-                            <div style="display: none;">
+                            <div >
                                 <div class="field"><label class="label">姓名</label>
                                     <div class="control is-clearfix"><input type="text" autocomplete="off"
                                             placeholder="输入您的姓名" required="required" class="input">
@@ -129,10 +131,11 @@
                                     <div class="control has-icons-right is-clearfix"><input type="text"
                                             autocomplete="off" placeholder="输入您的电话" required="required" class="input">
                                     </div>
-                                </div> </div>
-                                <div>
-                                    提交成功，请保持手机畅通，浩源财务将与您联系
-                                </div>
+                                </div> 
+                            </div>
+                            <div style="display: none;">
+                                提交成功，请保持手机畅通，浩源财务将与您联系
+                            </div>
                         </section>
                         <div class="modal-card-foot">
                             <button type="button" class="button is-primary" ><span>提交您的申请</span></button>
@@ -144,17 +147,23 @@
         </div>
         <section class="check-content">
             <div class="check-c-item">
-                <img src="./images/pic_check_01.jpg" alt="企业注册">
-                <h2>企业注册</h2>
+                <a href="./enterprise-registration.html">
+                    <img src="./images/pic_check_01.jpg" alt="企业注册">
+                    <h2>企业注册</h2>
+                </a>
             </div>
             <div class="check-c-item">
-                <img src="./images/pic_check_02.jpg" alt="企业命名规范">
-                <h2>企业命名规范</h2>
+                <a href="">
+                    <img src="./images/pic_check_02.jpg" alt="企业命名规范">
+                    <h2>企业命名规范</h2>
+                </a>
             </div>
             <div class="check-c-item">
-                <img src="./images/pic_check_03.jpg" alt="了解企业经营范围">
-                <h2>了解企业经营
-                    <br> 范围</h2>
+                <a href="">
+                    <img src="./images/pic_check_03.jpg" alt="了解企业经营范围">
+                    <h2>了解企业经营
+                        <br> 范围</h2>
+                </a>
             </div>
         </section>
         <div class="footer-wrap">
@@ -174,25 +183,31 @@
         <span>辽宁省大连市中山区民<br />意街40号</span>
       </div>
     </div>
-    <div class="fy-form-wrap">
-      <div class="field">
-        <div class="field-body">
-          <div class="control is-expanded is-clearfix" style="margin-right: 34px;"><input type="text"
-            autocomplete="on" maxlength="30" placeholder="姓名*" class="input">
+    <div class="fy-form-wrap" id="messageForm">
+      <form class="ui form" onsubmit="return submitForm()">
+        <div class="two fields">
+          <div class="field">
+            <input placeholder="姓名*" maxlength="30" name="name" type="text" autocomplete="off">
+          </div>
+          <div class="field">
+            <input placeholder="微信" maxlength="100" name="wechat" type="text" autocomplete="off">
+          </div>
         </div>
-        <div class="control is-expanded is-clearfix"><input type="text" autocomplete="on" maxlength="30"
-            placeholder="微信" class="input">
+        <div class="field">
+          <input placeholder="手机号*" maxlength="11" name="mobile" type="text" autocomplete="off">
         </div>
+        <div class="field">
+          <textarea rows="5" placeholder="留言内容" name="feedbackContent" maxlength="300" autocomplete="off"></textarea>
         </div>
+        <div class="ui blue submit button">提交</div>
+        <div class="ui error message"></div>
+      </form>
+      <div class="ui bottom hidden small success message">
+        <p>您的留言已提交成功!</p>
       </div>
-      <div class="field">
-        <div class="control is-clearfix"><input type="text" autocomplete="on" placeholder="手机号*" class="input">
-        </div>
+      <div class="ui bottom hidden small error message">
+        <p>您的留言提交失败,请稍后再试!</p>
       </div>
-      <div class="field">
-        <div class="control is-clearfix"><textarea maxlength="200" placeholder="留言内容" class="textarea"></textarea>
-        </div>
-      </div><button type="button" class="button is-medium is-info"><span>提交</span></button>
     </div>
   </div>
   <div class="footer-container">
@@ -248,7 +263,139 @@
         <a href="">财务代理</a>
       </div>
     </footer> -->
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/semantic.min.js?t=42468829698"></script>
+  <script type="text/javascript" src="https://v1.cnzz.com/z_stat.php?id=1280062537&web_id=1280062537"></script>
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?4d4f68d7ef4e68ac9ba1da84aea46587";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+
+
+    // 表单提交
+    $('.ui.form')
+      .form({
+        fields: {
+          name: {
+            identifier: 'name',
+            rules: [{
+              type: 'empty',
+              prompt: '您的姓名不能为空'
+            }]
+          },
+          mobile: {
+            identifier: 'mobile',
+            rules: [{
+              type: 'empty',
+              prompt: '您的手机号不能为空'
+            },{
+              type: 'regExp',
+              value: /^\d{11}$/,
+              prompt: '请输入正确的手机号'
+            }]
+          },
+          feedbackContent: {
+            identifier: 'feedbackContent',
+            rules: [{
+                type: 'empty',
+                prompt: '您的留言内容不能为空'
+              }
+            ]
+          }
+        }
+      });
+
+    function submitForm() {
+      var fields = $('.ui.form').form('get values', ['name', 'wechat', 'mobile', 'feedbackContent']);
+      console.log(fields)
+      if(fields.name && fields.mobile && fields.feedbackContent) {
+        $('.ui.blue.button').addClass('loading')
+        $.ajax({
+          type: "POST",
+          url: "api/renren-fastplus/api/hy/saveUserInfo",
+          data: JSON.stringify({
+            "name": fields.name,
+            "type": "0",
+            "feedbackContent": fields.feedbackContent,
+            "wechat": fields.wechat,
+            "mobile": fields.mobile
+          }),
+          headers: {
+            "Content-Type": "application/json"
+          },
+          success: function (data) {
+            $('.ui.blue.button').removeClass('loading')
+            if (data.code === 0) {
+              // location.reload();
+              console.log('成功')
+              $('.ui.success.message').removeClass('hidden')
+              setTimeout(() => {
+                $('.ui.success.message').addClass('hidden')
+              }, 2000);
+            } else {
+              $('.ui.error.message').removeClass('hidden')
+              setTimeout(() => {
+                $('.ui.error.message').addClass('hidden')
+              }, 2000);
+            }
+          },
+          error: function() {
+            $('.ui.blue.button').removeClass('loading')
+            $('.ui.error.message').removeClass('hidden')
+              setTimeout(() => {
+                $('.ui.error.message').addClass('hidden')
+              }, 2000);
+          }
+        })
+        return false
+      } else {
+        return false
+      }
+    }
+  </script>
 </div>
+        <div class="float-wrap">
+    <div class="float-content">
+        <div class="float-cell">
+            <img src="./images/icon-15.png" alt="" />
+            <span>在线咨询</span>
+        </div>
+        <div class="float-cell">
+            <img src="./images/icon-16.png" alt="" />
+            <span>微信</span>
+        </div>
+        <div class="float-cell">
+            <img src="./images/icon-17.png" alt="" />
+            <span>留言</span>
+        </div>
+    </div>
+    <div role="button">
+        <a class="float-abtn">
+          <img
+            class="menu-down"
+            src="./images/icon-up.png"
+            alt=""
+          />
+        </a>
+      </div>
+</div>
+<script>
+  $('.float-wrap .float-abtn').on('click', function(){
+        $('.float-content').animate({
+            height:'toggle'
+        }, 'fast' ,function(){
+            if($('.float-content').is(":hidden")){
+                $('.float-wrap .float-abtn img').attr('class', 'menu-up')
+            } else {
+                $('.float-wrap .float-abtn img').attr('class', 'menu-down')
+            }
+        })
+    })
+</script>
     </section>
     <script src="./js/jquery.min.js"></script>
     <script>
@@ -276,7 +423,6 @@
                 })
             })
             $('.modal-background').on('click',function(){
-                
                 $('.animation-content').css({
                     "transform": "scale(1.05)",
                 })

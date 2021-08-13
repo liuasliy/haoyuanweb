@@ -38,21 +38,21 @@ $(function() {
         })
     })
     /** 右侧浮动模块 */
-    $('.float-wrap .float-abtn').on('click', function(){
-        $('.float-content').animate({
-            height:'toggle'
-        }, 'fast' ,function(){
-            if($('.float-content').is(":hidden")){
-                $('.float-wrap .float-abtn img').attr('class', 'menu-up')
-            } else {
-                $('.float-wrap .float-abtn img').attr('class', 'menu-down')
-            }
-        })
-    })
+    // $('.float-wrap .float-abtn').on('click', function(){
+    //     $('.float-content').animate({
+    //         height:'toggle'
+    //     }, 'fast' ,function(){
+    //         if($('.float-content').is(":hidden")){
+    //             $('.float-wrap .float-abtn img').attr('class', 'menu-up')
+    //         } else {
+    //             $('.float-wrap .float-abtn img').attr('class', 'menu-down')
+    //         }
+    //     })
+    // })
 
-    $('.float-wrap').css({
-        right: (document.body.clientWidth || window.screen.width - 1200 )/6 +'px'
-    })
+    // $('.float-wrap').css({
+    //     right: (document.body.clientWidth || window.screen.width - 1200 )/6 +'px'
+    // })
     $('.h-search').on('click', function(){
         $('.search-main').css({
             display: 'flex'

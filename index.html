@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="浩源财务" />
+    <meta name="description" content="浩源财务" />
     <title>index</title>
+    <link rel="stylesheet" href="./css/semantic.min.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/swiper.min.css">
 </head>
@@ -24,28 +27,17 @@
             <a href="" class="">知识产权</a>
             <a href="./news.html" class="">新闻百科</a>
             <a href="./about.html" class="">关于浩源</a>
-            <div class="h-search" ><i></i>搜索</div>
+            <!-- <div class="h-search" ><i></i>搜索</div>
             <div class="search-main" >
                 <input type="text" placeholder="输入关键字查询" name="" id="">
                 <span>搜索</span>
-            </div>
+            </div> -->
         </div>
     </div>
 </header>
         <section class="banner-wrap">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide h-banner" style="background:url('./images/banner-1.jpg');background-size: 100% 100%;">
-                    <img src="./images/banner-text.png" alt="">
-                    <div class="banner-btn">立刻免费核名</div>
-                </div>
-                <div class="swiper-slide h-banner" style="background: url('./images/banner-1.jpg');background-size: 100% 100%;">
-                    <img src="./images/banner-text.png" alt="">
-                    <div class="banner-btn">立刻免费核名2</div>
-                </div>
-            </div>
-            <!-- Add Pagination -->
+            <div class="swiper-wrapper" id=bannerSwiper></div>
             <div class="swiper-pagination swiper-pagination-white"></div>
-            <!-- Add Arrows -->
             <div class="swiper-button-next swiper-button-white"></div>
             <div class="swiper-button-prev swiper-button-white"></div>
         </section>
@@ -124,7 +116,7 @@
                             <div class="s-content">
                                 <a href="./finance.html">
                                     <img src="./images/pic-11.png" alt="">
-                                <p>财务外包</p>
+                                    <p>财务外包</p>
                                 </a>
                             </div>
                             <div class="s-content"><img src="./images/pic-12.png" alt="">
@@ -254,25 +246,31 @@
         <span>辽宁省大连市中山区民<br />意街40号</span>
       </div>
     </div>
-    <div class="fy-form-wrap">
-      <div class="field">
-        <div class="field-body">
-          <div class="control is-expanded is-clearfix" style="margin-right: 34px;"><input type="text"
-            autocomplete="on" maxlength="30" placeholder="姓名*" class="input">
+    <div class="fy-form-wrap" id="messageForm">
+      <form class="ui form" onsubmit="return submitForm()">
+        <div class="two fields">
+          <div class="field">
+            <input placeholder="姓名*" maxlength="30" name="name" type="text" autocomplete="off">
+          </div>
+          <div class="field">
+            <input placeholder="微信" maxlength="100" name="wechat" type="text" autocomplete="off">
+          </div>
         </div>
-        <div class="control is-expanded is-clearfix"><input type="text" autocomplete="on" maxlength="30"
-            placeholder="微信" class="input">
+        <div class="field">
+          <input placeholder="手机号*" maxlength="11" name="mobile" type="text" autocomplete="off">
         </div>
+        <div class="field">
+          <textarea rows="5" placeholder="留言内容" name="feedbackContent" maxlength="300" autocomplete="off"></textarea>
         </div>
+        <div class="ui blue submit button">提交</div>
+        <div class="ui error message"></div>
+      </form>
+      <div class="ui bottom hidden small success message">
+        <p>您的留言已提交成功!</p>
       </div>
-      <div class="field">
-        <div class="control is-clearfix"><input type="text" autocomplete="on" placeholder="手机号*" class="input">
-        </div>
+      <div class="ui bottom hidden small error message">
+        <p>您的留言提交失败,请稍后再试!</p>
       </div>
-      <div class="field">
-        <div class="control is-clearfix"><textarea maxlength="200" placeholder="留言内容" class="textarea"></textarea>
-        </div>
-      </div><button type="button" class="button is-medium is-info"><span>提交</span></button>
     </div>
   </div>
   <div class="footer-container">
@@ -328,8 +326,102 @@
         <a href="">财务代理</a>
       </div>
     </footer> -->
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/semantic.min.js?t=42468829698"></script>
+  <script type="text/javascript" src="https://v1.cnzz.com/z_stat.php?id=1280062537&web_id=1280062537"></script>
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?4d4f68d7ef4e68ac9ba1da84aea46587";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+
+
+    // 表单提交
+    $('.ui.form')
+      .form({
+        fields: {
+          name: {
+            identifier: 'name',
+            rules: [{
+              type: 'empty',
+              prompt: '您的姓名不能为空'
+            }]
+          },
+          mobile: {
+            identifier: 'mobile',
+            rules: [{
+              type: 'empty',
+              prompt: '您的手机号不能为空'
+            },{
+              type: 'regExp',
+              value: /^\d{11}$/,
+              prompt: '请输入正确的手机号'
+            }]
+          },
+          feedbackContent: {
+            identifier: 'feedbackContent',
+            rules: [{
+                type: 'empty',
+                prompt: '您的留言内容不能为空'
+              }
+            ]
+          }
+        }
+      });
+
+    function submitForm() {
+      var fields = $('.ui.form').form('get values', ['name', 'wechat', 'mobile', 'feedbackContent']);
+      console.log(fields)
+      if(fields.name && fields.mobile && fields.feedbackContent) {
+        $('.ui.blue.button').addClass('loading')
+        $.ajax({
+          type: "POST",
+          url: "api/renren-fastplus/api/hy/saveUserInfo",
+          data: JSON.stringify({
+            "name": fields.name,
+            "type": "0",
+            "feedbackContent": fields.feedbackContent,
+            "wechat": fields.wechat,
+            "mobile": fields.mobile
+          }),
+          headers: {
+            "Content-Type": "application/json"
+          },
+          success: function (data) {
+            $('.ui.blue.button').removeClass('loading')
+            if (data.code === 0) {
+              // location.reload();
+              console.log('成功')
+              $('.ui.success.message').removeClass('hidden')
+              setTimeout(() => {
+                $('.ui.success.message').addClass('hidden')
+              }, 2000);
+            } else {
+              $('.ui.error.message').removeClass('hidden')
+              setTimeout(() => {
+                $('.ui.error.message').addClass('hidden')
+              }, 2000);
+            }
+          },
+          error: function() {
+            $('.ui.blue.button').removeClass('loading')
+            $('.ui.error.message').removeClass('hidden')
+              setTimeout(() => {
+                $('.ui.error.message').addClass('hidden')
+              }, 2000);
+          }
+        })
+        return false
+      } else {
+        return false
+      }
+    }
+  </script>
 </div>
-            <div class="float-wrap">
+        <div class="float-wrap">
     <div class="float-content">
         <div class="float-cell">
             <img src="./images/icon-15.png" alt="" />
@@ -354,12 +446,79 @@
         </a>
       </div>
 </div>
-                
+<script>
+  $('.float-wrap .float-abtn').on('click', function(){
+        $('.float-content').animate({
+            height:'toggle'
+        }, 'fast' ,function(){
+            if($('.float-content').is(":hidden")){
+                $('.float-wrap .float-abtn img').attr('class', 'menu-up')
+            } else {
+                $('.float-wrap .float-abtn img').attr('class', 'menu-down')
+            }
+        })
+    })
+</script>
+
         <!-- <FloatBtn /> -->
     </div>
-    <script src="./js/jquery.min.js"></script>
     <script src="./js/swiper.jquery.min.js"></script>
     <script src="./js/main.jquery.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                type: "POST",
+                url: "api/renren-fastplus/api/hy/getPageInfo",
+                data: JSON.stringify({
+                    "pageType": 'P100'
+                }),
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                success: function (data) {
+                    console.log(data)
+                    if (data.code === 0) {
+                        var result = data.pageInfo
+                        result.forEach(element => {
+                            if (element.key === 'TITLE_1_0_0') {
+                                document.title = element.value
+                            }
+                            if (element.key === 'KEYWORD_1_0_0') {
+                                $("meta[name='keywords']").attr('content', element.value);
+                            }
+                            if (element.key === 'DESC_1_0_0') {
+                                $("meta[name='description']").attr('content', element
+                                .value);
+                            }
+                        });
+                    }
+                }
+            })
+            $.ajax({
+                type: "POST",
+                url: "api/renren-fastplus/api/hy/getBanner",
+                data: JSON.stringify({}),
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                success: function (data) {
+                    console.log(data)
+                    if (data.code === 0) {
+                        var bannerList = data.bannerList
+                        var _html = ''
+                        bannerList.forEach(item => {
+                            _html = _html + "<div class='swiper-slide h-banner'"+
+                            "style='background:url(" + item.imageUrl + ");background-size: 100% 100%;'>" +
+                            // <img src="./images/banner-text.png" alt="">
+                            // <div class="banner-btn">立刻免费核名</div>
+                            "<a style='display: block;width: 100%;height: 100%;' href='" + item.bannerUrl  +"'></a></div>"
+                        })
+                        $('#bannerSwiper').html(_html)
+                    }
+                }
+            })
+        })
+    </script>
 </body>
 
 </html>
