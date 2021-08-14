@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="浩源财务" />
+    <meta name="description" content="浩源财务" />
     <title>专利申报</title>
     <link rel="stylesheet" href="./css/semantic.min.css">
     <link rel="stylesheet" href="./css/index.css">
@@ -135,7 +137,7 @@
                     <div class="r-i_content">
                         <h3>外观专利</h3>
                         <p>保护产品独特设计，审查周期短</p>
-                        <div class="rbtn">了解详情</div>
+                        <div class="rbtn" onclick="showModal(1)">了解详情</div>
                     </div>
                 </div>
                 <div class="r-c-item">
@@ -145,7 +147,7 @@
                     <div class="r-i_content">
                         <h3>实用新型</h3>
                         <p>保护结构形状创新，审查周期短</p>
-                        <div class="rbtn">了解详情</div>
+                        <div class="rbtn" onclick="showModal(2)">了解详情</div>
                     </div>
                 </div>
                 <div class="r-c-item">
@@ -155,7 +157,7 @@
                     <div class="r-i_content">
                         <h3>发明专利</h3>
                         <p>保护产品创新，专利权维持久</p>
-                        <div class="rbtn">了解详情</div>
+                        <div class="rbtn" onclick="showModal(3)">了解详情</div>
                     </div>
                 </div>
                 <div class="r-c-item">
@@ -165,12 +167,19 @@
                     <div class="r-i_content">
                         <h3>PCT国际专利</h3>
                         <p>第三方机构代理申请</p>
-                        <div class="rbtn">了解详情</div>
+                        <div class="rbtn" onclick="showModal(4)">了解详情</div>
                     </div>
                 </div>
             </div>
            </div>
         </section>
+        <div class="ui mini modal" >
+            <div class="content">
+              <div class="description">
+                <p style="font-size: 15px;">中国《专利法》第二条中规定：“外观设计，是指对产品的形状、图案或者其结合以及色彩与形状、图案的结合所做出的富有美感并适于工业应用的新设计。</p>
+              </div>
+            </div>
+          </div>
         <div class="related-news">
     <h2>相关文章</h2>
     <div class="related-news-wrap">
@@ -241,24 +250,24 @@
         <h3>关于我们</h3>
         <div>
           <a href="./about.html">关于浩源</a>
-          <a href="">企业宗旨</a>
-          <a href="">企业团队</a>
+          <a href="./about.html#purpose">企业宗旨</a>
+          <a href="./about.html#team">企业团队</a>
         </div>
       </div>
       <div class="footer-colum">
         <h3>服务项目</h3>
         <div>
           <a href="">工商代办</a>
-          <a href="">财税代理</a>
-          <a href="">商标，软著，专利申请</a>
-          <a href="">公积金和社保代理</a>
+          <a href="./tax-affairs.html">财税代理</a>
+          <a href="./trademark.html">商标，软著，专利申请</a>
+          <a href="./fund-social.html">公积金和社保代理</a>
           <a href="./high-tech.html">高新技术企业申报</a>
         </div>
       </div>
       <div class="footer-colum">
         <h3>新闻百科</h3>
         <div>
-          <a href="">新闻</a>
+          <a href="./news.html">新闻</a>
           <a href="">政策解读</a>
         </div>
       </div>
@@ -278,19 +287,13 @@
       </div>
     </div>
   </div>
-  <!-- <footer v-if="0">
-      <h2>友情链接</h2>
-      <div class="links">
-        <a href="">公司注册</a>
-        <a href="">财务代理</a>
-        <a href="">浩源财务</a>
-        <a href="">公司注册</a>
-        <a href="">财务代理</a>
-      </div>
-    </footer> -->
   <script src="./js/jquery.min.js"></script>
+  <script src="./js/main.jquery.js"></script>
   <script src="./js/semantic.min.js?t=42468829698"></script>
   <script type="text/javascript" src="https://v1.cnzz.com/z_stat.php?id=1280062537&web_id=1280062537"></script>
+  <style>
+  a[title='站长统计']{display:none;}
+  </style>
   <script>
     var _hmt = _hmt || [];
     (function () {
@@ -422,6 +425,27 @@
     })
 </script>
     </section>
+    <script>
+        function showModal(index) {
+            var modalText = ''
+            if(index === 1) {
+                modalText = '中国《专利法》第二条中规定：“外观设计，是指对产品的形状、图案或者其结合以及色彩与形状、图案的结合所做出的富有美感并适于工业应用的新设计。'
+            }
+            if(index === 2) {
+                modalText = '实用新型专利是三种专利类型（发明、实用新型和外观设计）中的一种，实用新型是指对产品的形状、构造或者其结合所提出的适于实用的新的技术方案。我国《专利法》明确将实用新型作为专利保护的类型之一。'
+            }
+            if(index === 3) {
+                modalText = '中国专利法规定，可以获得专利保护的发明创造有三种，包括发明、实用新型和外观设计。发明专利审查严格，需要申请人按期办理登记手续和缴纳当年年费。'
+            }
+            if(index === 4) {
+                modalText = 'PCT（Patent Cooperation Treaty）是有关专利的国际条约。根据PCT的规定，专利申请人可以通过PCT途径递交国际专利申请，向多个国家申请专利。中国申请人提出国际专利申请，可以直接向国家知识产权局专利局提交申请。'
+            }
+
+            $('.description p').text(modalText)
+            $('.ui.modal').modal('show');
+        }
+        
+    </script>
 </body>
 
 </html>

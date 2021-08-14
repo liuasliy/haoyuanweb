@@ -1,72 +1,83 @@
-var swiper = new Swiper('.banner-wrap', {
-    pagination: '.swiper-pagination',
-    paginationClickable: '.swiper-pagination',
-    nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev',
-    spaceBetween: 30,
-    zoom : true,
-    // effect: 'fade'
-});
+function getQueryString(name) {
+    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i')
+    var r = window.location.search.substr(1).match(reg)
+    if (r != null) return unescape(r[2])
+    return null
+}
 
-var swiper2 = new Swiper('.com-carousel', {
-    pagination: '.swiper-pagination',
-    effect: 'flip',
-    nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev'
-});
+function getPageVersion() {
+    var ts_href = window.location.href;
+    var ts_indexof = ts_href.lastIndexOf("/");
+    var ts_indexText = ts_href.substring(ts_indexof + 1);
+    var ts_htmlBeforeText = ts_indexText.indexOf(".html");
+    var ts_mainText = ts_indexText.substring(0, ts_htmlBeforeText);
+    switch (ts_mainText) {
+        case 'about':
+            return '300'
+        case 'article':
+            return '200'
+        case 'company-check':
+            return '110'
+        case 'enterprise-cancellation':
+            return '113'
+        case 'enterprise-change':
+            return '112'
+        case 'enterprise-registration':
+            return '111'
+        case 'financial-agent':
+            return '121'
+        case 'finance':
+            return '122'
+        case 'fund-social':
+            return '150'
+        case 'high-tech':
+            return '140'
+        case 'index':
+            return '100'
+        case 'news':
+            return '200'
+        case 'patent':
+            return '132'
+        case 'qualification':
+            return '160'
+        case 'tax-affairs':
+            return '124'
+        case 'trademark':
+            return '131'
+        case 'verification':
+            return '123'
+        default:
+            return '100';
+    }
+}
 
-
-$(function() {
-    /** 首页新闻动态效果 */
-    $('.news-content .news-item').each(function() {
-        $(this).on('mouseover',function() {
-            $(this).addClass('active')
-        })
-        $(this).on('mouseout',function() {
-            $(this).removeClass('active')
-        })
-    });
-
-    /** 服务内容切换 */
-    $('.tabs.is-toggle li').each(function(){
-        $(this).on('click', function(){
-            $(this).siblings().removeClass('is-active')
-            $(this).addClass('is-active')
-            var contents = $('.tab-content .tab-item')
-            $(contents[$(this).index()]).siblings().hide()
-            $(contents[$(this).index()]).show()
-        })
+window.baseUrl = 'http://82.157.26.10:8082'
+$(function () {
+    $.ajax({
+        type: "POST",
+        url: window.baseUrl + "/renren-fastplus/api/hy/getPageInfo",
+        data: JSON.stringify({
+            "pageType": 'P' + getPageVersion()
+        }),
+        headers: {
+            "Content-Type": "application/json"
+        },
+        success: function (data) {
+            if (data.code === 0) {
+                var result = data.pageInfo
+                result.forEach(element => {
+                    if (element.key === 'TITLE_'+ getPageVersion().split('').join('_')) {
+                        document.title = element.value
+                    }
+                    if (element.key === 'KEYWORD_' + getPageVersion().split('').join('_')) {
+                        $("meta[name='keywords']").attr('content', element.value);
+                    }
+                    if (element.key === 'DESC_' + getPageVersion().split('').join('_')) {
+                        $("meta[name='description']").attr('content', element
+                            .value);
+                    }
+                });
+            }
+        }
     })
-    /** 右侧浮动模块 */
-    // $('.float-wrap .float-abtn').on('click', function(){
-    //     $('.float-content').animate({
-    //         height:'toggle'
-    //     }, 'fast' ,function(){
-    //         if($('.float-content').is(":hidden")){
-    //             $('.float-wrap .float-abtn img').attr('class', 'menu-up')
-    //         } else {
-    //             $('.float-wrap .float-abtn img').attr('class', 'menu-down')
-    //         }
-    //     })
-    // })
-
-    // $('.float-wrap').css({
-    //     right: (document.body.clientWidth || window.screen.width - 1200 )/6 +'px'
-    // })
-    $('.h-search').on('click', function(){
-        $('.search-main').css({
-            display: 'flex'
-        })
-        $(this).hide()
-    })
-
-    // $(".list_dt").on("click",function () {
-    //     $('.list_dd').stop();
-    //     $(this).siblings("dt").removeAttr("id");
-    //     if($(this).attr("id")=="open"){
-    //         $(this).removeAttr("id").siblings("dd").slideUp();
-    //     }else{
-    //         $(this).attr("id","open").next().slideDown().siblings("dd").slideUp();
-    //     }
-    // });
 })

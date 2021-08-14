@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="浩源财务" />
+    <meta name="description" content="浩源财务" />
     <title>企业核名</title>
     
     <link rel="stylesheet" href="./css/semantic.min.css">
@@ -57,11 +59,9 @@
                         </ul>
                     </div>
                     <div class="select-item">
-                        <div class="s-lable" style="width: 140px;"><span>字号</span> <i></i></div>
-                        <ul class="s-options">
-                            <li>百度</li>
-                            <li>华为</li>
-                        </ul>
+                        <div class="s-lable" style="width: 310px;">
+                            <input type="text" class="s-lable__input" placeholder="请输入公司名称,如“百度”、“华为”等">
+                        </div>
                     </div>
                     <div class="select-item">
                         <div class="s-lable" style="width: 130px;"><span>行业</span><i></i></div>
@@ -115,7 +115,7 @@
                 <div class="b-button" ><a href="#messageForm" style="color: #fff;">联系客服</a></div>
             </div>
         </section>
-        <div role="dialog" class="modal is-active" style="display: none;">
+        <div role="dialog" class="hymodal is-active" style="display: none;">
             <div class="modal-background"></div>
             <div class="animation-content" style="width: 280px;">
                 <form action="">
@@ -216,24 +216,24 @@
         <h3>关于我们</h3>
         <div>
           <a href="./about.html">关于浩源</a>
-          <a href="">企业宗旨</a>
-          <a href="">企业团队</a>
+          <a href="./about.html#purpose">企业宗旨</a>
+          <a href="./about.html#team">企业团队</a>
         </div>
       </div>
       <div class="footer-colum">
         <h3>服务项目</h3>
         <div>
           <a href="">工商代办</a>
-          <a href="">财税代理</a>
-          <a href="">商标，软著，专利申请</a>
-          <a href="">公积金和社保代理</a>
+          <a href="./tax-affairs.html">财税代理</a>
+          <a href="./trademark.html">商标，软著，专利申请</a>
+          <a href="./fund-social.html">公积金和社保代理</a>
           <a href="./high-tech.html">高新技术企业申报</a>
         </div>
       </div>
       <div class="footer-colum">
         <h3>新闻百科</h3>
         <div>
-          <a href="">新闻</a>
+          <a href="./news.html">新闻</a>
           <a href="">政策解读</a>
         </div>
       </div>
@@ -253,19 +253,13 @@
       </div>
     </div>
   </div>
-  <!-- <footer v-if="0">
-      <h2>友情链接</h2>
-      <div class="links">
-        <a href="">公司注册</a>
-        <a href="">财务代理</a>
-        <a href="">浩源财务</a>
-        <a href="">公司注册</a>
-        <a href="">财务代理</a>
-      </div>
-    </footer> -->
   <script src="./js/jquery.min.js"></script>
+  <script src="./js/main.jquery.js"></script>
   <script src="./js/semantic.min.js?t=42468829698"></script>
   <script type="text/javascript" src="https://v1.cnzz.com/z_stat.php?id=1280062537&web_id=1280062537"></script>
+  <style>
+  a[title='站长统计']{display:none;}
+  </style>
   <script>
     var _hmt = _hmt || [];
     (function () {
