@@ -414,14 +414,14 @@ header {
   flex: 1; }
   .head-content a {
     color: #000;
-    font-size: 1rem;
+    font-size: 16px;
     margin-left: 50px;
     position: relative; }
     .head-content a:active {
       color: #000; }
-    .head-content a:first-child.active:after {
+    .head-content a:first-child.active:after, .head-content a:first-child:hover:after {
       width: 32px; }
-    .head-content a.active:after {
+    .head-content a.active:after, .head-content a:hover:after {
       content: "";
       display: block;
       height: 3px;
@@ -438,7 +438,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 0; }
     .head-content .h-search i {
       width: 16px;
@@ -533,7 +533,7 @@ header {
     border-radius: 0;
     color: #fff; }
     .fy-form-wrap .button.is-info span {
-      font-size: 1rem; }
+      font-size: 16px; }
 
 .footer-container {
   width: 100%;
@@ -551,7 +551,7 @@ header {
   text-align: left;
   color: #fff; }
   .footer-colum h3 {
-    font-size: 1rem;
+    font-size: 16px;
     margin-bottom: 15px; }
   .footer-colum a {
     font-size: 14px;
@@ -571,7 +571,7 @@ footer {
   padding: 30px 0; }
   footer h2 {
     margin-bottom: 10px;
-    font-size: 1rem;
+    font-size: 16px;
     color: #000;
     font-weight: bold;
     display: flex;
@@ -738,7 +738,7 @@ button,
   width: 1200px;
   margin: 0 auto 30px; }
   .related-news h2 {
-    font-size: 1.5rem;
+    font-size: 20px;
     font-weight: bold;
     text-align: center;
     color: #000;
@@ -762,21 +762,21 @@ button,
       transform: scale(1.1);
       filter: grayscale(0); }
   .m-n__item h3 {
-    font-size: 1rem;
+    font-size: 16px;
     color: #1451b8;
     margin: 15px 0 6px; }
   .m-n__item p {
     font-size: 14px;
     line-height: 24px; }
 
-.modal, .modal-background {
+.hymodal, .modal-background {
   bottom: 0;
   left: 0;
   position: absolute;
   right: 0;
   top: 0; }
 
-.modal {
+.hymodal {
   align-items: center;
   display: none;
   flex-direction: column;
@@ -784,9 +784,9 @@ button,
   overflow: hidden;
   position: fixed;
   z-index: 40; }
-  .modal.is-active {
+  .hymodal.is-active {
     display: flex; }
-  .modal .animation-content {
+  .hymodal .animation-content {
     margin: 0 20px;
     transition: transform .2s ease;
     transform: scale(1.05); }
@@ -923,7 +923,7 @@ button,
   align-items: center;
   cursor: pointer;
   justify-content: center;
-  font-size: 1rem;
+  font-size: 16px;
   box-shadow: 0px 0px 4px 0px rgba(63, 81, 181, 0.55); }
 
 .section-w {
@@ -935,7 +935,7 @@ button,
   background: #f2f2f2; }
 
 .h2 {
-  font-size: 1.5rem;
+  font-size: 20px;
   font-weight: bold;
   text-align: center;
   color: #000;
@@ -960,7 +960,7 @@ button,
     font-weight: bold;
     line-height: 30px;
     text-align: center;
-    font-size: 1rem; }
+    font-size: 16px; }
 
 .service-section {
   width: 1100px;
@@ -996,7 +996,7 @@ button,
     .service-section .tabsitem:last-child {
       margin-bottom: 0; }
     .service-section .tabsitem a span {
-      font-size: 1rem; }
+      font-size: 16px; }
     .service-section .tabsitem.is-active a {
       background: #1451b8; }
 
@@ -1016,7 +1016,7 @@ button,
   .s-content p {
     height: 58px;
     text-align: center;
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: bold;
     display: flex;
     justify-content: center;
@@ -1100,7 +1100,7 @@ button,
     text-align: center;
     margin-bottom: 20px; }
   .com-content h4 {
-    font-size: 1rem;
+    font-size: 16px;
     text-align: center;
     font-weight: bold;
     line-height: 35px; }
@@ -1117,11 +1117,11 @@ button,
   box-sizing: border-box;
   color: #000; }
   .news-item h3 {
-    font-size: 1.5rem;
+    font-size: 20px;
     font-weight: bold;
     margin-bottom: 12px; }
   .news-item h4 {
-    font-size: 1rem;
+    font-size: 16px;
     margin-bottom: 8px; }
   .news-item p {
     font-size: 14px;
@@ -1183,7 +1183,7 @@ button,
   justify-content: flex-start;
   align-items: center; }
   .nav-crumbs a {
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 0; }
   .nav-crumbs i {
     width: 8px;
@@ -1244,7 +1244,7 @@ button,
     text-align: left;
     padding-left: 250px; }
   .main-content .h3 {
-    font-size: 1rem;
+    font-size: 16px;
     margin-bottom: 16px;
     display: flex;
     align-items: center; }
@@ -1255,7 +1255,8 @@ button,
       display: block;
       background: url("../images/icon-3.png") no-repeat;
       background-size: 100% 100%;
-      margin-right: 20px; }
+      margin-right: 20px;
+      flex-shrink: 0; }
     .main-content .h3.icon6::before {
       width: 26px;
       height: 29px;
@@ -1285,7 +1286,7 @@ button,
   .check-banner h3 {
     padding-top: 80px;
     text-align: center;
-    font-size: 1.5rem; }
+    font-size: 20px; }
   .check-banner p {
     text-align: center;
     font-size: 1.2rem;
@@ -1333,6 +1334,10 @@ button,
       display: block;
       background: url("../images/icon-4.png") no-repeat;
       background-size: 100% 100%; }
+    .select-item .s-lable__input {
+      padding: 6px 0;
+      width: 100%;
+      border: none; }
   .select-item .s-options {
     display: none;
     position: absolute;
@@ -1400,7 +1405,7 @@ button,
       height: 100%; }
     .check-content .check-c-item h2 {
       text-align: center;
-      font-size: 1.5rem;
+      font-size: 20px;
       text-align: center;
       color: #fff;
       position: absolute;
@@ -1439,7 +1444,7 @@ button,
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem; }
+  font-size: 16px; }
   .m-c-item.pic01 {
     background: #fff url("../images/pic_hightech_01.png") no-repeat 20px 10px;
     background-size: 65px 56px; }
@@ -1474,7 +1479,7 @@ button,
       text-align: center;
       padding-bottom: 28px; }
     .factor-wrap .fcontent p {
-      font-size: 1rem;
+      font-size: 16px;
       line-height: 25px; }
 
 .about-hy {
@@ -1513,7 +1518,7 @@ button,
   .about-aim h3 {
     color: #fff;
     text-align: center;
-    font-size: 2rem;
+    font-size: 24px;
     padding-bottom: 40px;
     padding-top: 40px; }
   .about-aim h4 {
@@ -1531,7 +1536,7 @@ button,
   .about-team h2 {
     text-align: left; }
   .about-team p {
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 35px;
     text-indent: 2em; }
 
@@ -1561,7 +1566,7 @@ button,
     .echange-i-l ul li {
       width: 50%;
       color: #fff;
-      font-size: 1rem;
+      font-size: 16px;
       line-height: 30px; }
 
 .echange-i-r {
@@ -1732,7 +1737,7 @@ button,
 .trademark-btn {
   color: #1451b8;
   border: solid 1px #1451b8;
-  font-size: 1rem;
+  font-size: 16px;
   padding: 10px 30px;
   display: inline-block;
   margin-left: 31%;
@@ -1805,7 +1810,7 @@ button,
   flex-wrap: wrap;
   margin-right: 40px; }
   .n-date i {
-    font-size: 2rem;
+    font-size: 24px;
     margin-bottom: 4px; }
   .n-date span {
     font-size: 1.2rem; }
@@ -1816,7 +1821,7 @@ button,
   margin-bottom: 20px; }
 
 .n-content p {
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 25px;
   padding-right: 80px; }
 
@@ -1914,7 +1919,7 @@ button,
         background: #fff;
         border-radius: 50%; }
   .v-m-item h3 {
-    font-size: 1rem;
+    font-size: 16px;
     margin-bottom: 4px;
     line-height: 30px; }
   .v-m-item p {
@@ -1945,7 +1950,7 @@ button,
   background: #f5f7fc;
   padding: 35px 220px; }
   .verification-info .h3 {
-    font-size: 1.5rem;
+    font-size: 20px;
     margin-bottom: 16px;
     display: flex;
     align-items: center; }
@@ -1959,7 +1964,7 @@ button,
       margin-right: 20px; }
   .verification-info .text {
     line-height: 40px;
-    font-size: 1rem;
+    font-size: 16px;
     padding-left: 48px; }
     .verification-info .text span {
       margin-right: 50px; }
@@ -2102,7 +2107,7 @@ button,
     display: block;
     margin-bottom: 25px; }
   .p-c-item span {
-    font-size: 1.1rem; }
+    font-size: 18px; }
 
 .reg-content {
   padding-left: 280px;
@@ -2135,7 +2140,7 @@ button,
     .r-c-item .r-i_content h3 {
       padding: 8px 0;
       color: #000;
-      font-size: 1.1rem; }
+      font-size: 18px; }
     .r-c-item .r-i_content p {
       font-size: 13px;
       color: #333; }
@@ -2164,7 +2169,7 @@ button,
   align-items: center;
   flex-direction: column;
   cursor: pointer; }
-  .qua-item:hover {
+  .qua-item:hover, .qua-item.active {
     background: #e9f7fd; }
   .qua-item img {
     height: 45px;
@@ -2176,10 +2181,11 @@ button,
     font-size: 1rem; }
 
 .qua-intro {
-  box-shadow: 0px 8px 8px 2px #ebeef5; }
+  box-shadow: 0px 8px 8px 2px #ebeef5;
+  margin-bottom: 10px; }
   .qua-intro .echange-i-l {
     padding-top: 30px;
-    padding-left: 80px;
+    padding-left: 50px;
     height: 350px;
     background: #ebf0fd; }
     .qua-intro .echange-i-l h3 {
@@ -2194,6 +2200,53 @@ button,
       font-size: .9rem; }
   .qua-intro .echange-i-r img {
     height: 350px; }
+
+.clearfix {
+  zoom: 1; }
+  .clearfix::before, .clearfix::after {
+    content: "";
+    display: table; }
+  .clearfix::after {
+    clear: both; }
+
+.qua-tabs-item {
+  background: #ebf0fd;
+  display: none;
+  font-size: 0;
+  position: relative; }
+  .qua-tabs-item:first-child {
+    display: block; }
+  .qua-tabs-item .qa-left,
+  .qua-tabs-item .qa-right {
+    width: 50%;
+    vertical-align: top;
+    box-sizing: border-box;
+    display: inline-block; }
+  .qua-tabs-item .qa-left {
+    float: left; }
+  .qua-tabs-item .qa-right {
+    float: right; }
+    .qua-tabs-item .qa-right__pic {
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: url("../images/pic_echange_pic.jpg") no-repeat;
+      background-size: 100% 100%; }
+
+.qua-tab-content {
+  padding: 0 20px 30px 55px;
+  min-height: 360px; }
+  .qua-tab-content .h3 {
+    font-size: 1.2rem;
+    color: #000;
+    padding-top: 30px; }
+  .qua-tab-content p {
+    color: #666666;
+    font-size: .9rem;
+    padding: 4px 0;
+    line-height: 1.8; }
 
 .agent-intro .echange-i-l {
   height: 320px;
@@ -2228,7 +2281,7 @@ button,
     background: url("../images/icon-5.png") no-repeat;
     background-size: 100% 100%; }
   .agent-info h4 {
-    font-size: 1.5rem;
+    font-size: 20px;
     padding-left: 50px;
     padding-top: 120px; }
   .agent-info h5 {
